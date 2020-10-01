@@ -3,7 +3,7 @@ package com.SammyOcean;
 import javax.sound.midi.*;
 import javax.swing.*;
 
-public class Main implements ControllerEventListener {
+public class Main {
 
     static JFrame jFrame = new JFrame("Music Beat");
     static DrawingPanel drawingPanel;
@@ -61,10 +61,5 @@ public class Main implements ControllerEventListener {
             System.out.println("Invalid Midi Data: " + e);
         }
         return midiEvent;
-    }
-
-    @Override
-    public void controlChange(ShortMessage event) {
-        System.out.println("la");
     }
 }

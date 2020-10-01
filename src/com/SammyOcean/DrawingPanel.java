@@ -27,12 +27,25 @@ public class DrawingPanel extends JPanel implements ControllerEventListener {
 
                 graphics2D.setColor(new Color(red, green, blue));
 
+                Color startColor = new Color(red, green, blue);
+
+                red = (int) (Math.random() * 250);
+                green = (int) (Math.random() * 250);
+                blue = (int) (Math.random() * 250);
+
                 int height = (int) ((Math.random() * 120) + 10);
                 int width = (int) ((Math.random() * 120) + 10);
+
                 int x = (int) ((Math.random() * 150) + 10);
                 int y = (int) ((Math.random() * 150) + 10);
+                int x1 = (int) ((Math.random() * 150) + 10);
+                int y1 = (int) ((Math.random() * 150) + 10);
 
-                graphics2D.fill3DRect(x, y, width, height, true);
+                Color endColor = new Color(red, green, blue);
+
+                GradientPaint gradient = new GradientPaint(x, y, startColor, x1, y1, endColor);
+                graphics2D.setPaint(gradient);
+                graphics2D.fillRect(x,y,width,height);
             }
             message = false;
         }
